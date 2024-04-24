@@ -1,5 +1,26 @@
 from app import app
-import uvicorn
+from gunicorn.app.base import BaseApplication
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+class StandaloneApplication(BaseApplication):
+    def __init__(self, app, options=None):
+        self.options = options or {}
+        self.application = app
+        super(StandaloneApplication, self).__init__()
+
+    def load_config(self):
+        config = {key: value for key, value in self.options.items()
+                  if key in self.cfg.settings and value is not None}
+        for key, value in config.items():
+            self.cfg.set(key.lower(), value)
+
+    def load(self):
+        return self.application
+
+if __name__ == '__main__':
+    options = {
+        'bind': '0.0.0.0:5000',  # Bind to all interfaces on port 5000
+        'workers': 4,            # Number of worker processes
+        'accesslog': '-',        # Log to stdout
+        'errorlog': '-',         # Log errors to stdout
+    }
+    StandaloneApplication(app, options).run()
