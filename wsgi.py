@@ -18,9 +18,9 @@ class StandaloneApplication(BaseApplication):
 
 if __name__ == '__main__':
     options = {
-        'bind': '0.0.0.0:5000',  # Bind to all interfaces on port 5000
-        'workers': 4,            # Number of worker processes
-        'accesslog': '-',        # Log to stdout
-        'errorlog': '-',         # Log errors to stdout
+        'bind': '0.0.0.0:5000',  
+        'workers': 4,            
+        'accesslog': '-',        
+        'errorlog': '-',         
     }
     StandaloneApplication(app, options).run()
