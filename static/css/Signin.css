@@ -33,7 +33,7 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url("/Backend/static/img/BackGrounds/test\ 2.png");
+    background-image: url("/static/img/BackGrounds/test\ 2.png");
     background-size:cover;
     background-position: center;
 
