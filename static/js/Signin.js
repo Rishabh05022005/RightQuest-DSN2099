@@ -9,23 +9,23 @@ login_button.addEventListener('click', () => {
     const email = email_input.value;
     const password = password_input.value;
 
-    const url = 'http://5.161.84.77/:8000/login';
+    const url = './login_post';
     const data = { email: email, password: password };
 
     fetch(url, { body: JSON.stringify(data), method: 'POST' }).then(response => {
         if (response.status !== 200) {
-            throw
+            throw new Error('Invalid email or password!');
         }
 
         response.json().then(data => {
             console.log(data);
 
             if (data.status === 'failed') {
-                throw
+                throw new Error('Invalid email or password!');
             }
 
             const token = data.token;
-            localStorage.setItem('token',token);
+            localStorage.setItem('token', token);
 
             // use this token to authenticate requests
             alert('Login successful!');
