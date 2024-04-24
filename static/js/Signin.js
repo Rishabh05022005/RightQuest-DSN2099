@@ -9,32 +9,41 @@ login_button.addEventListener('click', () => {
     const email = email_input.value;
     const password = password_input.value;
 
-    const url = './login_post';
+    const url = './login_post'; 
     const data = { email: email, password: password };
 
-    fetch(url, { body: JSON.stringify(data), method: 'POST' }).then(response => {
-        if (response.status !== 200) {
+    fetch(url, {
+        body: JSON.stringify(data),
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Invalid email or password!'); 
+        }
+    })
+    .then(data => {
+        console.log(data);
+
+        if (data.status === 'failed') {
             throw new Error('Invalid email or password!');
         }
 
-        response.json().then(data => {
-            console.log(data);
+        const token = data.token;
+        localStorage.setItem('token', token);
 
-            if (data.status === 'failed') {
-                throw new Error('Invalid email or password!');
-            }
-
-            const token = data.token;
-            localStorage.setItem('token', token);
-
-            // use this token to authenticate requests
-            alert('Login successful!');
-        });
-    }).catch(error => {
-        alert('Invalid email or password!');
+        // Use this token to authenticate subsequent requests
+        alert('Login successful!');
+        // Redirect to another page or update UI after successful login
+        window.location.href = '/some_authenticated_page';
+    })
+    .catch(error => {
+        alert(error.message); // Alert with the error message
         email_input.value = '';
         password_input.value = '';
         login_button.disabled = false;
     });
-
 });
+
