@@ -2,7 +2,7 @@ from pymongo import MongoClient
 import string, random
 
 db = MongoClient(
-    "mongodb+srv://Rgcmusicbot:rgcxd@cluster0.aip5wiz.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://AviaxMusic:AviaxMusic@cluster0.qtfk4yn.mongodb.net/?retryWrites=true&w=majority"
 ).testdb.login
 
 
