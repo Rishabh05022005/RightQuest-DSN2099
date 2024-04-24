@@ -9,7 +9,7 @@ login_button.addEventListener('click', () => {
     const email = email_input.value;
     const password = password_input.value;
 
-    const url = 'http://127.0.0.1:8000/login';
+    const url = 'http://5.161.84.77/:8000/login';
     const data = { email: email, password: password };
 
     fetch(url, { body: JSON.stringify(data), method: 'POST' }).then(response => {
