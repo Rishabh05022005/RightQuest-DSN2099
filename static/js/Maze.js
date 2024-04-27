@@ -529,7 +529,7 @@ function rand(max) {
     };
     sprite = new Image();
     sprite.src =
-      "./key.png" +
+      "/static/img/key.png" +
       "?" +
       new Date().getTime();
     sprite.setAttribute("crossOrigin", " ");
@@ -541,7 +541,7 @@ function rand(max) {
     };
   
     finishSprite = new Image();
-    finishSprite.src = "./home.png"+
+    finishSprite.src = "/static/img/home.png"+
     "?" +
     new Date().getTime();
     finishSprite.setAttribute("crossOrigin", " ");
