@@ -11,7 +11,7 @@ var columns = 3;
 
 var card1Selected;
 var card2Selected;
-var staticPath = '/static/img/cards/'; // Update this to the correct path of your card images within the static directory
+var staticPath = '/static/img/'; 
 
 window.onload = function() {
     shuffleCards();
