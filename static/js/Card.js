@@ -38,6 +38,10 @@ function startGame() {
         let row = [];
         for (let c = 0; c < columns; c++) {
             let cardImg = cardSet.pop();
+            if (!cardImg) {
+                console.error('Card image is undefined, check the cardSet array');
+                continue; // Skip this iteration and continue with the loop
+            }
             row.push(cardImg);
 
             let card = document.createElement("img");
