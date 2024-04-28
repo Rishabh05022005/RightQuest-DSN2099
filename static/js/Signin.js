@@ -37,7 +37,7 @@ login_button.addEventListener('click', () => {
         // Use this token to authenticate subsequent requests
         alert('Login successful!');
         // Redirect to another page or update UI after successful login
-        window.location.href = '/some_authenticated_page';
+        window.location.href = '/modules';
     })
     .catch(error => {
         alert(error.message); // Alert with the error message
