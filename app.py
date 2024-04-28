@@ -67,9 +67,22 @@ def rightone():
 def righttwo():
     return render_template('right2.html')
 
-@app.route('/contact_us')
-#@login_required
+@app.route('/contact_us', methods=['GET', 'POST'])
 def contact_us():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        message = f"Name: {name}\nPhone: {phone}\nEmail: {email}"
+        try:
+            # Assuming you have a function `send_email` to send emails
+            send_email('noreply@yourdomain.com', email, "Contact Received", message)
+            flash('Thank you for contacting us, we will get back to you shortly.')
+        except Exception as e:
+            app.logger.error(f"Failed to send email: {e}")
+            flash('Failed to send your message, please try again later.')
+        return redirect(url_for('contact_us'))
+    
     return render_template('email.html')
 
 
