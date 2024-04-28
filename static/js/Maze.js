@@ -9,6 +9,10 @@ function rand(max) {
     }
     return a;
   }
+
+function goToRight1() {
+  window.location.href = "/rightone";
+}
   
   function changeBrightness(factor, sprite) {
     var virtCanvas = document.createElement("canvas");
