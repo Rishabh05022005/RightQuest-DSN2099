@@ -1,5 +1,6 @@
 import os
 from functools import wraps
+from flask_mail import Mail
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 from db import create_user, is_user_exist
 from email_service import setup_mail, send_email
