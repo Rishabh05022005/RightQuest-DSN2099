@@ -11,6 +11,6 @@ def setup_mail(app):
     return mail
 
 def send_email(mail, subject, sender, recipients, body):
-    msg = Message(subject, sender=sender, recipients=[recipients])
+    msg = Message(subject, sender=sender, recipients=recipients)
     msg.body = body
     mail.send(msg)
