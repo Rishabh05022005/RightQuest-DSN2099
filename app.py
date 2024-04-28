@@ -1,8 +1,19 @@
-from flask import Flask, render_template, request
-
+from flask import Flask, render_template, request, session, redirect, url_for, flash
 from db import create_user, is_user_exist
+from functools import wraps
+import os
 
 app = Flask(__name__)
+app.secret_key = os.urandom(16)
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'logged_in' not in session:
+            flash('You must be logged in to view this page.')
+            return redirect(url_for('signin'))
+        return f(*args, **kwargs)
+    return decorated_function
 
 @app.route('/')
 def home():
@@ -17,24 +28,35 @@ def signup():
     return render_template('SignUp.html')
 
 @app.route('/card')
+@login_required
 def card():
     return render_template('Card.html')
 
 @app.route('/cardquiz')
+@login_required
 def card_quiz():
     return render_template('CardQuiz.html')
 
 @app.route('/maze')
+@login_required
 def maze():
     return render_template('Maze.html')
 
 @app.route('/mazequiz')
+@login_required
 def maze_quiz():
     return render_template('Mazequiz.html')
 
 @app.route('/modules')
+@login_required
 def modules():
     return render_template('Module.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('You have been logged out.')
+    return redirect(url_for('signin'))
 
 
 @app.route("/login_post", methods=["POST"])
