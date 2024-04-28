@@ -21,7 +21,7 @@ function emailSend(){
   	// 	swal("Secussful", "Email is Sent Succesfully!", "success");
   	// }
     if(message){
-        swal("Secussful", "Email is Sent Succesfully!", "success");
+        swal("Secussful", "Check your email for further details", "success");
     }
   	else{
   		swal("Error", "Try Again!", "error");
