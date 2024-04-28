@@ -1,10 +1,14 @@
+import os
+from functools import wraps
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 from db import create_user, is_user_exist
-from functools import wraps
-import os
+from email_service import setup_mail
+from config import Config
+
 
 app = Flask(__name__)
-app.secret_key = os.urandom(16)
+app.config.from_object(Config)
+mail = setup_mail(app)
 
 def login_required(f):
     @wraps(f)
