@@ -32,6 +32,11 @@ def maze():
 def maze_quiz():
     return render_template('Mazequiz.html')
 
+@app.route('/modules')
+def modules():
+    return render_template('Module.html')
+
+
 @app.route("/login_post", methods=["POST"])
 def login_post():
     try:
