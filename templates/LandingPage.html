@@ -11,7 +11,10 @@
     <header>
         <a class="logo" href="/"><img class= "logo"src="/static/img/logo.png" alt="logo"></a>
         <nav>
-            <button>About</button>
+            <div class="buttons">
+                <a href="{{ url_for('AboutUs') }}">
+                    <button>About</button>
+                </a>
             <button>Partnership</button>
             <button>Contact</button>
         </nav>
