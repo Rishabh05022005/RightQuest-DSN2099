@@ -6,6 +6,15 @@
 <body>
     <div class="container">
         <h2>Contact Us</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
         <form method="POST" action="{{ url_for('contact_us') }}">
             <input type="text" id="name" placeholder="Your Name" name="name" required>
             <input type="text" id="phone" placeholder="Your Phone Number" name="phone" required>
