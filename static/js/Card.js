@@ -1,5 +1,4 @@
 var errors = 100;
- document.getElementById("errors").innerText = errors;
 var cardList = [
     "card1",
     "card2"
