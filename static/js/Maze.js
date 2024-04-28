@@ -11,7 +11,7 @@ function rand(max) {
   }
 
 function goToRight1() {
-  window.location.href = "/rightone";
+  window.location.href = "/right1";
 }
   
   function changeBrightness(factor, sprite) {
