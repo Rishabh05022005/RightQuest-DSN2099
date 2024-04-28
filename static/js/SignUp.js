@@ -29,6 +29,7 @@ login_button.addEventListener('click', () => {
 
             // use this token to authenticate requests
             alert('SignUp successful!');
+            window.location.href = '/signin';
         });
     }).catch(error => {
         alert('Failed To SignUp!');
