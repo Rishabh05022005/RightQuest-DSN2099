@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Right Quest - Modules</title>
-    <link rel="stylesheet" href="Module.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Module.css') }}">
 </head>
 <body>
 
     <header>
-        <a class="logo" href="/"><img class= "logo"src="/Images/logo.png" alt="logo"></a>
+        <a class="logo" href="/"><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="logo"></a>
 
         <a class="cta" href="https://www.childlineindia.org/a/about/childline-india#:~:text=Call%201098%20%E2%80%93%20Any%20child%20or,2"> <!-- Add the URL here -->
             <button class="GetHelp">Get Help 📞</button>
@@ -21,17 +21,17 @@
 
         <div class="main-1">
             <button class="image-button">
-                <img src="/Images/Icons/canvas.png" alt="Image" class="button-canvas">
+                <img src="{{ url_for('static', filename='img/Icons/canvas.png') }}" alt="Image" class="button-canvas">
                 <div class="image-text-solo">Wait! It's Time to Play, Not Get Married! </div>
             </button>
     
             <button class="image-button">
-                <img src="/Images/Icons/canvas.png" alt="Image" class="button-canvas">
+                <img src="{{ url_for('static', filename='img/Icons/canvas.png') }}" alt="Image" class="button-canvas">
                 <div class="image-text"><br>School's Cool! Get Your Learn On! </div>
             </button>
     
             <button class="image-button">
-                <img src="/Images/Icons/canvas.png" alt="Image" class="button-canvas">
+                <img src="{{ url_for('static', filename='img/Icons/canvas.png') }}" alt="Image" class="button-canvas">
                 <div class="image-text"><br>Trouble Happens, But Help is There! </div>
             </button>
     
@@ -39,12 +39,12 @@
         <div class="main-2">
 
             <button class="image-button">
-                <img src="/Images/Icons/canvas.png" alt="Image" class="button-canvas">
+                <img src="{{ url_for('static', filename='img/Icons/canvas.png') }}" alt="Image" class="button-canvas">
                 <div class="image-text"><br>Stay Safe and Say No!</div>
                 </button>
         
                 <button class="image-button">
-                <img src="/Images/Icons/canvas.png" alt="Image" class="button-canvas">
+                <img src="{{ url_for('static', filename='img/Icons/canvas.png') }}" alt="Image" class="button-canvas">
                 <div class="image-text"><br>No Work Until You're Older! </div>
                 </button>
         </div>
