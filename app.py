@@ -52,6 +52,13 @@ def maze_quiz():
 def modules():
     return render_template('Module.html')
 
+@app.route('/AboutUs')
+#@login_required
+def About():
+    return render_template('About.html')
+
+
+
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
