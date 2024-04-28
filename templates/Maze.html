@@ -48,7 +48,7 @@
     </div> -->
 
     <div id="menu">
-      <button id="startMazeBtn" onclick="makeMaze()">
+      <button id="startMazeBtn" onclick="location.href='{{ url_for('home') }}'">
         <img class="menu-icons" src="{{ url_for('static', filename='img/Icons/homeCompressed.png') }}" alt="Reset Image">
       </button>
 
@@ -56,7 +56,7 @@
         <img class="menu-icons" src="{{ url_for('static', filename='img/Icons/ResetCompressed.png') }}" alt="Reset Image">
       </button>
 
-      <button id="startMazeBtn" onclick="makeMaze()">
+      <button id="startMazeBtn" onclick="location.href='{{ url_for('home') }}'">
         <img class="menu-icons" src="{{ url_for('static', filename='img/Icons/menuCompressed.png') }}" alt="Reset Image">
       </button>
     </div>
