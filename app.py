@@ -67,6 +67,11 @@ def rightone():
 def righttwo():
     return render_template('right2.html')
 
+@app.route('/contact_us')
+#@login_required
+def contact_us():
+    return render_template('email.html')
+
 
 
 @app.route('/logout')
