@@ -28,27 +28,27 @@ def signup():
     return render_template('SignUp.html')
 
 @app.route('/card')
-@login_required
+#@login_required
 def card():
     return render_template('Card.html')
 
 @app.route('/cardquiz')
-@login_required
+#@login_required
 def card_quiz():
     return render_template('CardQuiz.html')
 
 @app.route('/maze')
-@login_required
+#@login_required
 def maze():
     return render_template('Maze.html')
 
 @app.route('/mazequiz')
-@login_required
+#@login_required
 def maze_quiz():
     return render_template('Mazequiz.html')
 
 @app.route('/modules')
-@login_required
+#@login_required
 def modules():
     return render_template('Module.html')
 
