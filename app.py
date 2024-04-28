@@ -79,9 +79,8 @@ def contact_us():
         phone = request.form['phone']
         message = f"Name: {name}\nPhone: {phone}\nEmail: {email}"
         try:
-            # Assuming you have a function `send_email` to send emails
-            send_email('noreply@yourdomain.com', email, "Contact Received", message)
-            flash('Thank you for contacting us, we will get back to you shortly.')
+            send_email(mail, subject, app.config['MAIL_USERNAME'], [email], message_body)
+            flash('Thank you for your message. We will contact you soon!')
         except Exception as e:
             app.logger.error(f"Failed to send email: {e}")
             flash('Failed to send your message, please try again later.')
