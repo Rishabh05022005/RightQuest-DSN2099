@@ -57,6 +57,16 @@ def modules():
 def About():
     return render_template('About.html')
 
+@app.route('/right1')
+#@login_required
+def rightone():
+    return render_template('right1.html')
+
+@app.route('/right2')
+#@login_required
+def righttwo():
+    return render_template('right2.html')
+
 
 
 @app.route('/logout')
