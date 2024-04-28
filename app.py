@@ -78,7 +78,7 @@ def contact_us():
         email = request.form['email']
         phone = request.form['phone']
         subject = f"New Contact Request from {name}"
-        message = f"Name: {name}\nPhone: {phone}\nEmail: {email}"
+        message_body = f"Name: {name}\nPhone: {phone}\nEmail: {email}"
         try:
             send_email(mail, subject, app.config['MAIL_USERNAME'], [email], message_body)
             flash('Thank you for your message. We will contact you soon!')
